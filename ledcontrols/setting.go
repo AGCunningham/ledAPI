@@ -20,6 +20,8 @@ func SetPinOut(set string){
 	dataPin.Output()
 	dataPin.High()
 
+	fmt.Println("Pin has been set: "+set)
+
 	if set == "high" {
 		dataPin.High()
 	} else if set == "low" {

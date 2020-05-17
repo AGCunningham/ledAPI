@@ -5,14 +5,16 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
+	"github.com/stianeikeland/go-rpio/v4"
+
 	server "ledAPI/webserver"
 )
 
 func main() {
 	err := rpio.Open()
 	defer rpio.Close()
-	if err != null {
-		log.fatal("GPIO Pins could not be initialised")
+	if err != nil {
+		log.Fatal("GPIO Pins could not be initialised")
 	}
 
 	router := mux.NewRouter().StrictSlash(true)

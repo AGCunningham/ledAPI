@@ -15,12 +15,14 @@ func SetLEDPreset(preset string){
 }
 
 func SetPinOut(set string){
-	// GPIO Pin 19 - https://github.com/stianeikeland/go-rpio#usage
-	dataPin := rpio.Pin(10)
+	// Pin out -> https://github.com/stianeikeland/go-rpio/blob/master/rpio.go
+	dataPin := rpio.Pin(26)
+	dataPin.Output()
+	dataPin.High()
 
 	if set == "high" {
 		dataPin.High()
-	} else {
+	} else if set == "low" {
 		dataPin.Low()
 	}
 }

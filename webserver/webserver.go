@@ -29,3 +29,11 @@ func SetPreset(w http.ResponseWriter, r *http.Request){
 
 	fmt.Fprintf(w, "Preset is: "+presetReq)
 }
+
+func SetPin(w http.ResponseWriter, r *http.Request){
+	pinSet := mux.Vars(r)["set"]
+
+	led.SetPinOut(pinSet)
+
+	fmt.Fprintf(w, "Pin set to: "+pinSet)
+}

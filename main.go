@@ -22,5 +22,6 @@ func main() {
 	router.HandleFunc("/colour/{colour}", server.GetColour).Methods("GET")
 	router.HandleFunc("/preset/{preset}", server.SetPreset).Methods("GET")
 	router.HandleFunc("/pin/{set}", server.SetPin).Methods("GET")
+	router.HandleFunc("/pcon", server.PowerOn).Methods("GET")
 	log.Fatal(http.ListenAndServe(":10000", router))
 }

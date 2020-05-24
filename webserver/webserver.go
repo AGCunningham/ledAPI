@@ -37,6 +37,8 @@ func SetPin(w http.ResponseWriter, r *http.Request){
 	led.SetPinOut(pinSet)
 
 	fmt.Fprintf(w, "Pin set to: "+pinSet)
+}
+
 func PowerOn(w http.ResponseWriter, r *http.Request){
 	fmt.Fprintf(w, "PC on command sent")
 	err := wol.SendMagicPacket("B4-2E-99-9A-70-A9")
